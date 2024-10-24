@@ -322,6 +322,7 @@ public class MainActivity extends AppCompatActivity {
             if (canLoadX5) {
                 CoreText.setText("当前程序运行在腾讯X5内核上");
             } else {
+                CoreText.setText("准备安装腾讯X5内核");
                 Intent intent = new Intent(MainActivity.this, LoadingActivity.class);
                 startActivity(intent);
                 finish(); // 销毁 MainActivity
