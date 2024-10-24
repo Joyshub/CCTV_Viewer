@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         getWindow().setFormat(PixelFormat.TRANSLUCENT); 
+        //getWindow().setFormat(PixelFormat.TRANSLUCENT); 
        
         // 加载设置
         // 获取 SharedPreferences
