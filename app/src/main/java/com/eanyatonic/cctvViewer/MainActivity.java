@@ -161,16 +161,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // 读取直接频道切换设置
-        enableDirectChannelChange = sharedPreferences.getBoolean("direct_channel_change", false);
+        enableDirectChannelChange = sharedPreferences.getBoolean("direct_channel_change", true);
 
         // 读取直接返回设置
         enableDirectBack = sharedPreferences.getBoolean("direct_back", true);
 
         // 读取双缓冲设置
-        enableDualWebView = sharedPreferences.getBoolean("dual_webview", false);
+        enableDualWebView = sharedPreferences.getBoolean("dual_webview", true);
 
         // 读取WebView设置
-        Boolean forceSysWebView = sharedPreferences.getBoolean("sys_webview", true);
+        Boolean forceSysWebView = sharedPreferences.getBoolean("sys_webview", false);
 
         // 获取 AudioManager 实例
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
