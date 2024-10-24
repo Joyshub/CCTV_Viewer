@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         enableDualWebView = sharedPreferences.getBoolean("dual_webview", true);
 
         // 读取WebView设置
-        Boolean forceSysWebView = sharedPreferences.getBoolean("sys_webview", true);
+        Boolean forceSysWebView = sharedPreferences.getBoolean("sys_webview", false);
 
         // 获取 AudioManager 实例
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
