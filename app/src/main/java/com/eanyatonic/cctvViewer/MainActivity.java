@@ -217,34 +217,6 @@ public class MainActivity extends AppCompatActivity {
                 "央视频道", "地方频道"
         };
 
-                // https://developer.android.com/reference/android/webkit/WebView.html#getCurrentWebViewPackage()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // Android 8.0+
-            PackageInfo pkgInfo = WebView.getCurrentWebViewPackage();
-            if (pkgInfo != null) {
-                CoreText.setText("当前程序运行在系统WebView上，版本号：" + pkgInfo.versionName);
-            }
-        }
-
-        // X5内核代码
-        if (!forceSysWebView) {
-            QbSdk.unForceSysWebView();
-            requestPermission();
-
-            Log.d("versionX5",String.valueOf(QbSdk.getTbsVersion(getApplicationContext())));
-            canLoadX5 = QbSdk.canLoadX5(getApplicationContext());
-            Log.d("canLoadX5", String.valueOf(canLoadX5));
-            if (canLoadX5) {
-                CoreText.setText("当前程序运行在腾讯X5内核上");
-            } else {
-                CoreText.setText("准备安装腾讯X5内核，请等待...");
-                Intent intent = new Intent(MainActivity.this, LoadingActivity.class);
-                startActivity(intent);
-                finish(); // 销毁 MainActivity
-            }
-        }
-        else{
-            QbSdk.forceSysWebView();
-        }
         
         // 动态生成中央台按钮和地方台按钮
         for (String channel : firstDrawer) {
@@ -331,7 +303,34 @@ public class MainActivity extends AppCompatActivity {
             button.setTextSize(TEXT_SIZE);
             subMenuLocal.addView(button);
         }
+                // https://developer.android.com/reference/android/webkit/WebView.html#getCurrentWebViewPackage()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // Android 8.0+
+            PackageInfo pkgInfo = WebView.getCurrentWebViewPackage();
+            if (pkgInfo != null) {
+                CoreText.setText("当前程序运行在系统WebView上，版本号：" + pkgInfo.versionName);
+            }
+        }
 
+        // X5内核代码
+        if (!forceSysWebView) {
+            QbSdk.unForceSysWebView();
+            requestPermission();
+
+            Log.d("versionX5",String.valueOf(QbSdk.getTbsVersion(getApplicationContext())));
+            canLoadX5 = QbSdk.canLoadX5(getApplicationContext());
+            Log.d("canLoadX5", String.valueOf(canLoadX5));
+            if (canLoadX5) {
+                CoreText.setText("当前程序运行在腾讯X5内核上");
+            } else {
+                CoreText.setText("准备安装腾讯X5内核，请等待...");
+                Intent intent = new Intent(MainActivity.this, LoadingActivity.class);
+                startActivity(intent);
+                finish(); // 销毁 MainActivity
+            }
+        }
+        else{
+            QbSdk.forceSysWebView();
+        }
         HashMap<String, Object> map = new HashMap<>(2);
         map.put(TbsCoreSettings.TBS_SETTINGS_USE_SPEEDY_CLASSLOADER, true);
         map.put(TbsCoreSettings.TBS_SETTINGS_USE_DEXLOADER_SERVICE, true);
