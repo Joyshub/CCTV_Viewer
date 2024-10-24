@@ -49,7 +49,7 @@ import java.util.Objects;
 // WebView内核代码
 //import android.webkit.SslErrorHandler;
 //import android.webkit.WebChromeClient;
-//import android.webkit.WebSettings;
+import android.webkit.WebSettings;
 //import android.webkit.WebView;
 //import android.webkit.WebViewClient;
 
@@ -375,8 +375,8 @@ public class MainActivity extends AppCompatActivity {
             webSettings.setMixedContentMode(com.tencent.smtt.sdk.WebSettings.LOAD_NORMAL);
             webSettings1.setMixedContentMode(com.tencent.smtt.sdk.WebSettings.LOAD_NORMAL);
             // 系统WebView内核代码
-            webSettings.setMixedContentMode(webSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-            webSettings1.setMixedContentMode(webSettings1.MIXED_CONTENT_ALWAYS_ALLOW);
+            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+            webSettings1.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
 
         // 设置 WebViewClient 和 WebChromeClient
