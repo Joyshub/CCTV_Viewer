@@ -15,7 +15,7 @@
         android:key="direct_channel_change"
         android:title="启用直接换台"
         android:summary="按上下键时，直接换台，而不是弹出换台抽屉"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <SwitchPreference
         android:key="direct_back"
@@ -30,13 +30,13 @@
         android:key="dual_webview"
         android:title="启用双缓冲加载"
         android:summary="使用双标签页加载，在较高端设备上提供更好的换台体验"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <SwitchPreference
         android:key="sys_webview"
         android:title="强制使用系统内核"
         android:summary="在系统WebView版本较高的设备上禁用X5内核"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <ListPreference
         android:key="x5_webview_version"
